@@ -1,6 +1,10 @@
 import colors from 'vuetify/es5/util/colors'
 
+import * as configPartials from './nuxt.config.partials'
+
 export default {
+  ...configPartials,
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - ex-nuxt-todo-app',
@@ -15,12 +19,14 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap' }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/scss/utils/_utils',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -32,11 +38,8 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-    // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify'
   ],
 
@@ -44,9 +47,9 @@ export default {
   modules: [
   ],
 
-  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: [ '~/assets/variables.scss' ],
+    customVariables: [ '~/scss/utils/_variables.scss' ],
+    treeShake: true,
     theme: {
       dark: true,
       themes: {
@@ -63,7 +66,20 @@ export default {
     }
   },
 
+  router: {
+    extendRoutes ( routes ) {
+      console.log( JSON.stringify( routes, null, 1 ) )
+    }
+  },
+
+  dir: {
+    assets: 'scss',
+    pages: 'views'
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    postcss: {
+    }
   }
 }
