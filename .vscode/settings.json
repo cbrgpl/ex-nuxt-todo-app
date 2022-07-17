@@ -1,8 +1,14 @@
 {
-    "stylelint.validate": [ "css", "scss", "vue" ],
-    "css.validate": false,
-    "scss.validate": false,
-    "marquee.widgets.npm-stats.packageNames": [
-        "ex-nuxt-todo-app"
-    ]
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "vue"
+  ],
+  "css.validate": false,
+  "scss.validate": false,
+  "marquee.widgets.npm-stats.packageNames": [
+    "ex-nuxt-todo-app"
+  ],
+  "explorerExcludedFiles.show": true,
+  "nuxt.isNuxtApp": true
 }
