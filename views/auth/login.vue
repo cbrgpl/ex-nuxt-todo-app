@@ -1,18 +1,19 @@
 <template >
-  <div >
+  <ZPage class="logion-page" >
     <NuxtLink :to="{name: 'auth-registration'}" >
-      reg
+      registrationn
     </NuxtLink>
-
-    login page
-  </div>
+  </ZPage>
 </template>
 
 <script>
+import { setTitleInRouteMeta } from '@mixins/setTitleInRouteMeta.js'
 
 export default {
   name: 'TheLogin',
-  emptyLayoutTitle: 'Log In',
+  mixins: [
+    setTitleInRouteMeta( 'Registration' )
+  ],
 }
 
 </script>

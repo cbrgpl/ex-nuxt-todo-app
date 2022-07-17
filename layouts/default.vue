@@ -11,6 +11,9 @@ export default {
   name: 'DefaultLayout',
   components: {
     BaseLayout
+  },
+  mounted () {
+    console.log( this.$route )
   }
 }
 </script>
