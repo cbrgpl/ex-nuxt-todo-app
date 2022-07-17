@@ -11,6 +11,7 @@
 
 export default {
   name: 'TheAuth',
+  layout: 'empty'
 }
 </script>
 

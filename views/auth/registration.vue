@@ -1,15 +1,19 @@
 <template >
   <div >
     <NuxtLink :to="{name: 'auth-login'}" >
-      log
+      login
     </NuxtLink>
   </div>
 </template>
 
 <script>
+import { setTitleInRouteMeta } from '@mixins/setTitleInRouteMeta.js'
+
 export default {
   name: 'TheRegister',
-  emptyLayoutTitle: 'Registration'
+  mixins: [
+    setTitleInRouteMeta( 'Registration' )
+  ],
 }
 </script>
 
