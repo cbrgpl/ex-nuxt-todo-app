@@ -1,8 +1,5 @@
 <template >
   <div >
-    <v-btn class="button" >
-      asdaqew
-    </v-btn>
     <NuxtChild />
   </div>
 </template>
@@ -11,9 +8,9 @@
 
 export default {
   name: 'TheAuth',
-  layout: 'empty'
+  layout: 'empty/index'
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="sass" scoped>
 </style>

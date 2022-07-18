@@ -1,7 +1,7 @@
-import { extend } from './extend'
-import { alias } from './alias'
+import { alias } from './alias.js'
+import { build } from './build'
 
 export {
-  extend,
-  alias
+  alias,
+  build
 }

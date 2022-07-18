@@ -1,6 +1,6 @@
 export const setTitleInRouteMeta = ( title ) => {
   return {
-    mounted () {
+    created () {
       this.$route.meta.emptyLayoutTitle = title
     }
   }

@@ -10,15 +10,6 @@ module.exports = {
     {
       files: [ '*.vue', '**/*.vue' ],
       customSyntax: 'postcss-html',
-      rules: {
-        'selector-pseudo-element-no-unknown': [
-          true,
-          {
-            ignorePseudoElements: [ 'v-deep' ]
-          }
-        ]
-
-      }
     }
   ],
   rules: {
@@ -29,7 +20,7 @@ module.exports = {
       true,
       {
         ignoreFunctions: [
-          'em', 'rem', 'theme'
+          'em',
         ]
       }
     ],
@@ -37,14 +28,11 @@ module.exports = {
     'max-nesting-depth': 2,
     'selector-pseudo-element-no-unknown': [
       true,
-      {
-        ignorePseudoElements: [
-          'v-deep'
-        ]
-      }
     ],
+
     // ORDER
     'order/properties-alphabetical-order': null,
+
     // SCSS
     'scss/at-rule-no-unknown': [
       true,

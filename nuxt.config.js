@@ -25,9 +25,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '~/scss/utils/_utils',
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -51,7 +49,7 @@ export default {
   ],
 
   vuetify: {
-    customVariables: [ '~/scss/utils/_variables.scss' ],
+    customVariables: [ '~/scss/utils/_utils.scss' ],
     treeShake: true,
     theme: {
       dark: true,
@@ -79,10 +77,4 @@ export default {
     assets: 'scss',
     pages: 'views'
   },
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    postcss: {
-    }
-  }
 }
