@@ -11,7 +11,6 @@ module.exports = {
     requireConfigFile: false,
     parser: '@babel/eslint-parser'
   },
-  plugins: [ 'promise' ],
   extends: [
     '@nuxtjs',
     'plugin:nuxt/recommended',

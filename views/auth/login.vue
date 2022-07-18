@@ -12,12 +12,14 @@ import { setTitleInRouteMeta } from '@mixins/setTitleInRouteMeta.js'
 export default {
   name: 'TheLogin',
   mixins: [
-    setTitleInRouteMeta( 'Registration' )
+    setTitleInRouteMeta( 'Log In Page' )
   ],
 }
 
 </script>
 
 <style lang="scss" scoped>
-
+.logion-page {
+  display: block;
+}
 </style>
