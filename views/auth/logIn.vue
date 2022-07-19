@@ -24,11 +24,11 @@ export default {
     ZAuthCard: () => import( '@auth_components/composite/zAuthCard.vue' )
   },
   mixins: [
-    setTitleInRouteMeta( 'Log In Page' )
+    setTitleInRouteMeta( 'Log In' )
   ],
   methods: {
     logIn ( { logInData, rememberMe } ) {
-      console.log( logInData, rememberMe )
+      console.log( 'Log In', logInData, rememberMe )
     }
   }
 
