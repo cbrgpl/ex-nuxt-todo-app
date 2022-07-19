@@ -1,14 +1,12 @@
 <template >
-  <div >
-    <NuxtChild />
-  </div>
+  <NuxtChild />
 </template>
 
 <script>
 
 export default {
   name: 'TheAuth',
-  layout: 'empty/index'
+  layout: 'empty/index',
 }
 </script>
 
