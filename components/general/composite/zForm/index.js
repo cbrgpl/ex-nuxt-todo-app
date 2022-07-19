@@ -1,4 +1,7 @@
 export const formMethodsMixin = {
+  components: {
+    ZForm: () => import( '@general_components/composite/zForm/zForm.vue' )
+  },
   created () {
     this.mixErrorMessagesForFields( this.$v )
   },
@@ -54,8 +57,9 @@ export const formMethodsMixin = {
       for ( const validator of validatorProps ) {
         if ( !fieldValidation[ validator ] ) {
           const validatorParams = fieldValidation.$params[ validator ]
+          const errorMessage = typeof validatorParams.errorMessage === 'function' ? validatorParams.errorMessage() : validatorParams.errorMessage
 
-          fieldValidation.$errors.push( validatorParams.errorMessage )
+          fieldValidation.$errors.push( errorMessage )
         }
       }
     }

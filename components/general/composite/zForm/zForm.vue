@@ -56,9 +56,16 @@ export default {
 .form {
   &__button {
     width: 100%;
-    max-width: rem(240px);
-    margin-left: auto;
     font-weight: 600;
+  }
+}
+
+@media #{map-get($display-breakpoints, "md-and-up")} {
+  .form {
+    &__button {
+      max-width: rem(160px);
+      margin-left: auto;
+    }
   }
 }
 

@@ -12,9 +12,9 @@ const groups = {
       required: 'Value is required',
       alpha: 'Value must be alpha only',
       alphaNum: 'Value must be alphaNum',
-      numeric: 'Value must be numeric only',
-      integer: 'Value must be integer only',
-      decimal: 'Value must be decimal only',
+      numeric: 'Must contains only numeric symbols',
+      integer: 'Must be number',
+      decimal: 'Must contains decimal smbls? what?',
       email: 'Invalid email format',
       ipAddress: 'Value must be valid ip address',
       url: 'Value must be valid url',
@@ -39,9 +39,14 @@ const groups = {
       maxLength: maxLength => 'maxLength error',
       minValue: min => 'minValue error',
       maxValue: max => 'maxValue error',
-      between: ( min, max ) => 'between error',
+      between: ( min, max ) => `Must be more then ${ min } and less then ${ max }`,
       macAddress: separator => `Mac address with ${ separator } error`,
-      sameAs: () => 'Idk how to generate error',
+      sameAs: ( fieldPath ) => {
+        const splittedFieldPath = fieldPath.split( '.' )
+        const fieldName = splittedFieldPath[ splittedFieldPath.length - 1 ]
+
+        return () => `Must be the same as ${ fieldName }`
+      },
       not: () => 'Not error',
       or: () => 'Or error',
       and: () => 'And error',
@@ -76,7 +81,7 @@ const modifyValidatorFactory = ( factory, getErrorMessage ) => {
 
     return helpers.withParams(
       { errorMessage: getErrorMessage( ...args ) },
-      val => validator( val )
+      ( val, vm ) => validator( val, vm )
     )
   }
 }

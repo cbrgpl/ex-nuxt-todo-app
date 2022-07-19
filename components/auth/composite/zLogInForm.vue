@@ -38,9 +38,6 @@ import { formMethodsMixin } from '@general_components/composite/zForm'
 
 export default {
   name: 'ZAuthForm',
-  components: {
-    ZForm: () => import( '@general_components/composite/zForm/zForm.vue' )
-  },
   mixins: [ validationMixin, formMethodsMixin ],
   emits: [ 'submitted' ],
   data () {
@@ -52,17 +49,11 @@ export default {
       rememberMe: true,
     }
   },
-  computed: {
-    vv () {
-      return this.$v.form.email.$errors
-    }
-  },
   validations: {
     form: {
       email: {
         required,
         email,
-        minLength: minLength( 8 )
       },
       password: {
         required,
@@ -72,7 +63,7 @@ export default {
   },
   methods: {
     emitSubmitted () {
-      const clone = Object.assign( {}, this.data.form )
+      const clone = Object.assign( {}, this.form )
       this.$emit( 'submitted', { logInData: clone, rememberMe: this.rememberMe } )
     }
   }
